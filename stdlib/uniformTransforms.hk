@@ -34,4 +34,9 @@ def logistic(lambda prob, kappa prob):
 	X <~ log_logistic(lambda, kappa)
 	return log(X)
 
-logistic(2,3)
+# logistic exponential distribution
+def logisticExponential(lambda prob, kappa prob):
+	x <~ uniform(0,1)
+	return 1/lambda*log( real2prob( 1 + ( real2prob(x/(1-x)) ** (1/kappa) ) ) )
+
+logisticExponential(2,3)
