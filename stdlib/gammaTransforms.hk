@@ -18,3 +18,9 @@ def invGamma(shape prob, scale prob) measure(prob):
 def gamma_normal(mu real,alpha prob,beta prob):
 	rho <~ invGamma(alpha , beta)
 	return normal(mu,rho^2)
+
+#log gamma distribution
+def log_gamma(alpha prob, beta prob):
+	x <~ gamma(alpha, beta)
+	return log(x)
+log_gamma(2,3)
