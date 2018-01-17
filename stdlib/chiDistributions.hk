@@ -20,6 +20,7 @@ def chi(means array(real), stdevs array(prob)):
 	q <~ chiSq(means,stdevs)
 	return sqrt(real2prob(q))
 
+
 # Chi Squared distribution with n independant and identical distributions (iid).
 def chiSq_iid(n nat, mean real, stdev prob):
 	q <~ plate _ of n: normal(mean,stdev)
