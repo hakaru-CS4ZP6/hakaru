@@ -23,3 +23,12 @@ def stdCauchy():
 def cauchy(a real, alpha prob):
 	X <~ stdCauchy()
 	return a + alpha*X
+
+# Log Normal distribution implemented as explained on wikipedia
+# https://en.wikipedia.org/wiki/Log-normal_distribution
+def logNormal(mean real, stdev prob):
+	X <~ stdNormal()
+	return exp(mean + stdev*X)
+
+
+
