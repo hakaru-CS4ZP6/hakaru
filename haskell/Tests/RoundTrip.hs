@@ -204,6 +204,13 @@ testMeasurePair = test [
     "testMCMCPriorProp" ~: testConcreteFile "tests/RoundTrip/testMCMCPriorProp.hk"
     ]
 
+testExponentialRelations :: Test 
+testExponentialRelations = test [ 
+    "t_exponential_scale_closure"   ~: testConcreteFiles "tests/RoundTrip/t_exponential_scale_closure.0.hk" "tests/RoundTrip/t_exponential_scale_closure.expected.hk",
+    "t_exponential_to_stdChiSq"     ~: testConcreteFiles "tests/RoundTrip/t_exponential_to_stdChiSq.0.hk" "tests/RoundTrip/t_exponential_to_stdChiSq.expected.hk",
+    "t_exponential_rate_sum"        ~: testConcreteFiles "tests/RoundTrip/t_exponential_sum_rates.0.hk" "tests/RoundTrip/t_exponential_sum_rates.expected.hk"
+    ]
+
 testOther :: Test
 testOther = test [
     "t82"              ~: testConcreteFiles "tests/RoundTrip/t82.0.hk" "tests/RoundTrip/t82.expected.hk",
@@ -245,6 +252,7 @@ allTests = test
     , testMeasurePair
     , testMeasureNat
     , testMeasureInt
+    , testExponentialRelations
     , testOther
     ]
 
