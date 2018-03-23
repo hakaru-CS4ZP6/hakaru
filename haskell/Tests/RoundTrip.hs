@@ -203,7 +203,10 @@ testMeasurePair = test [
     "easyHMM"           ~: testConcreteFile "tests/RoundTrip/easyHMM.hk",
     "testMCMCPriorProp" ~: testConcreteFile "tests/RoundTrip/testMCMCPriorProp.hk"
     ]
-
+testStdChiRelations :: Test
+testStdChiRelations = test [
+    "t_laplace_to_chiSq" ~: testConcreteFiles "tests/RoundTrip/t_laplace_to_chiSq.0.hk" "tests/RoundTrip/t_laplace_to_chiSq.expected.hk"
+    ]
 testOther :: Test
 testOther = test [
     "t82"              ~: testConcreteFiles "tests/RoundTrip/t82.0.hk" "tests/RoundTrip/t82.expected.hk",
@@ -246,6 +249,7 @@ allTests = test
     , testMeasureNat
     , testMeasureInt
     , testOther
+    , testStdChiRelations
     ]
 
 ----------------------------------------------------------------
