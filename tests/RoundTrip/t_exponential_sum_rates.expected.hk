@@ -11,7 +11,7 @@ def exponential(alpha prob):
 	X <~ uniform(0,1)
 	return -1 * alpha * log(real2prob(X))
 
-def expSumWeights(alpha prob, beta prob):
-	X <~ exponential(alpha*beta/(alpha + beta))
+def expSumRates(alpha prob, beta prob):
+	exponential(alpha*beta/(alpha + beta))
 
-expSumWeights(1/1,2/1)
+expSumRates(1/1,2/1)

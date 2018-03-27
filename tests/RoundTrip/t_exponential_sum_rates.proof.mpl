@@ -11,7 +11,11 @@
 
 PDF_exponential := (alpha, x) -> exp(-x/alpha)/alpha;
 
+PDF_sum_rates := (alpha, beta, x) -> PDF_exponential(alpha*beta/(alpha+beta),x);
+
+PDF_sum_equiv := (alpha, beta, x) -> min(PDF_exponential(alpha,x), PDF_exponential(beta,x));
 
 
 
-evalb(PDF_kX(lambda, x, k) = PDF_exp_scaled(lambda, x, k));
+
+#evalb(PDF_kX(lambda, x, k) = PDF_exp_scaled(lambda, x, k));
