@@ -203,10 +203,19 @@ testMeasurePair = test [
     "easyHMM"           ~: testConcreteFile "tests/RoundTrip/easyHMM.hk",
     "testMCMCPriorProp" ~: testConcreteFile "tests/RoundTrip/testMCMCPriorProp.hk"
     ]
+
+testRayleighRelations :: Test
+testRayleighRelations = test [
+    "t_weibull_to_rayleigh" ~: testConcreteFiles "tests/RoundTrip2/t_weibull_to_rayleigh.0.hk" "tests/RoundTrip/t_weibull_to_rayleigh.expected.hk",
+    "t_gamma_to_rayleigh" ~: testConcreteFiles "tests/RoundTrip2/t_gamma_to_rayleigh.0.hk" "tests/RoundTrip/t_gamma_to_rayleigh.expected.hk",
+    "t_exponential_to_rayleigh" ~: testConcreteFiles "tests/RoundTrip2/t_exponential_to_rayleigh.0.hk" "tests/RoundTrip/t_exponential_to_rayleigh.expected.hk"
+    ]
+
 testStdChiRelations :: Test
 testStdChiRelations = test [
-    "t_laplace_to_chiSq" ~: testConcreteFiles "tests/RoundTrip/t_laplace_to_chiSq.0.hk" "tests/RoundTrip/t_laplace_to_chiSq.expected.hk"
+    "t_laplace_to_chiSq" ~: testConcreteFiles "tests/RoundTrip2/t_laplace_to_chiSq.0.hk" "tests/RoundTrip/t_laplace_to_chiSq.expected.hk"
     ]
+
 testOther :: Test
 testOther = test [
     "t82"              ~: testConcreteFiles "tests/RoundTrip/t82.0.hk" "tests/RoundTrip/t82.expected.hk",
@@ -250,6 +259,7 @@ allTests = test
     , testMeasureInt
     , testOther
     , testStdChiRelations
+    , testRayleighRelations
     ]
 
 ----------------------------------------------------------------
