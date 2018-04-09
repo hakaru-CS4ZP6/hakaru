@@ -1,0 +1,16 @@
+# If X ~ Exp(λ) and Y ~ Exp(ν) then λX − νY ~ Laplace(0, 1).
+
+# Rewrite for scale: 
+#	λ = 1/α and ν = 1/β 
+# If X ~ Exp(α) and Y ~ Exp(β) then X/α − Y/β ~ Laplace(0, 1).
+
+def exponential(alpha prob):
+	X <~ uniform(0,1)
+	return -1 * alpha * log(real2prob(X))
+
+def laplace(alpha prob, beta prob):
+	X <~ exponential(alpha)
+	Y <~ exponential(beta)
+	return X - Y
+
+laplace(1/1,1/1)

@@ -1,0 +1,13 @@
+# If X ~ Exp(α) and Y ~ Exp(β) then X/α − Y/β ~ Laplace(1, 1).
+
+def exponential(alpha prob):
+	X <~ uniform(0,1)
+	return -1 * alpha * log(real2prob(X))
+
+def exponentialDiff(alpha prob, beta prob):
+	X <~ exponential(alpha)
+	Y <~ exponential(beta)
+	return X/alpha - Y/beta
+
+
+exponentialDiff(100/1,1/3)
