@@ -208,7 +208,10 @@ testExponentialRelations :: Test
 testExponentialRelations = test [ 
     "t_exponential_scale_closure"   ~: testConcreteFiles "tests/RoundTrip/t_exponential_scale_closure.0.hk" "tests/RoundTrip/t_exponential_scale_closure.expected.hk",
     "t_exponential_to_stdChiSq"     ~: testConcreteFiles "tests/RoundTrip/t_exponential_to_stdChiSq.0.hk" "tests/RoundTrip/t_exponential_to_stdChiSq.expected.hk",
-    "t_exponential_rate_sum"        ~: testConcreteFiles "tests/RoundTrip/t_exponential_sum_rates.0.hk" "tests/RoundTrip/t_exponential_sum_rates.expected.hk"
+    "t_exponential_rate_sum"        ~: testConcreteFiles "tests/RoundTrip/t_exponential_sum_rates.0.hk" "tests/RoundTrip/t_exponential_sum_rates.expected.hk",
+    "t_stdChiSq_to_gamma"   ~: testConcreteFiles "tests/RoundTrip/t_stdChiSq_to_gamma.0.hk" "tests/RoundTrip/t_stdChiSq_to_gamma.expected.hk",
+    "t_stdChiSq_to_exponential" ~: testConcreteFiles "tests/RoundTrip2/t_stdChiSq_to_exponential.0.hk" "tests/RoundTrip2/t_stdChiSq_to_exponential.expected.hk",
+    "t_rayleigh_to_stdChiSq"     ~: testConcreteFiles "tests/RoundTrip2/t_rayleigh_to_stdChiSq.0.hk" "tests/RoundTrip2/t_rayleigh_to_stdChiSq.expected.hk"        
     ]
 
 testOther :: Test
@@ -253,6 +256,7 @@ allTests = test
     , testMeasureNat
     , testMeasureInt
     , testExponentialRelations
+    , testStdChiSqRelations
     , testOther
     ]
 
