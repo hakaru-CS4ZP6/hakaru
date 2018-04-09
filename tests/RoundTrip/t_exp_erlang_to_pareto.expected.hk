@@ -1,0 +1,8 @@
+# If X ~ Exp(α) and Y ~ Erlang(n, α) then: X/Y + 1 ~ Pareto(1,n)
+
+def pareto(lambda prob, kappa prob):
+	X <~ uniform(0,1)
+	return lambda / (real2prob(X) ** (1/kappa))
+
+
+pareto(1/1,2/1)
