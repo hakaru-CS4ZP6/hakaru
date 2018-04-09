@@ -1,0 +1,12 @@
+# If X ~ Exponential(λ) then k*exp(X) ~ Pareto(k, λ)
+
+def exponential(alpha prob):
+	X <~ uniform(0,1)
+	return -1 * alpha * log(real2prob(X))
+
+def expToPareto(lambda prob, kappa prob):
+	X <~ exponential(1/lambda)
+	return kappa*exp(X)
+
+
+expToPareto(1/1,4/1)
