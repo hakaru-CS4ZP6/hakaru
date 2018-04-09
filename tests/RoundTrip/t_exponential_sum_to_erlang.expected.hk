@@ -1,0 +1,7 @@
+# If Xi ~ exponential(λ) then X1+...+Xk ~ erlang(k,λ)
+
+# The Erlang Distribution (AKA Discrete Gamma)
+def erlang(shape nat, scale prob) measure(prob):
+	gamma(nat2prob(shape), scale)
+
+erlang(3,2/1)

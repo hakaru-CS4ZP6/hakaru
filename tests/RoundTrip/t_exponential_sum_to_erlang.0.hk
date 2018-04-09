@@ -1,0 +1,12 @@
+# If Xi ~ exponential(λ) then X1+...+Xk ~ erlang(k,λ)
+
+def exponential(alpha prob):
+	X <~ uniform(0,1)
+	return -1 * alpha * log(real2prob(X))
+
+def exponentialSum(k nat, alpha prob):
+	iid <~ plate _ of k: exponential(alpha)
+	return summate i from 0 to size(iid): iid[i]
+
+
+exponentialSum(1,2/1)
