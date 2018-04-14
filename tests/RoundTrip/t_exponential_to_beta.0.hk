@@ -1,8 +1,7 @@
 # If X ~ Exp(λ) then e^−X ~ Beta(λ, 1).
 
 def exponential(alpha prob):
-	X <~ uniform(0,1)
-	return -1 * alpha * log(real2prob(X))
+	gamma(1/1, alpha)
 
 def exp2beta(lambda prob):
 	X <~ exponential(1/lambda)

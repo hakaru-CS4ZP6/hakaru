@@ -6,6 +6,6 @@ def pareto(lambda prob, kappa prob):
 
 def paretoToExponential(alpha prob):
 	X <~ pareto(1/1,1/alpha)
-	return log(X)
+	return real2prob(log(X))
 
 paretoToExponential(1/1)

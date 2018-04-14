@@ -7,11 +7,4 @@
 #	If X ~ Exp(α) and Y ~ Exp(β) 
 # 	then min(X, Y) ~ Exp(αβ/(β + α)).
 
-def exponential(alpha prob):
-	X <~ uniform(0,1)
-	return -1 * alpha * log(real2prob(X))
-
-def expSumRates(alpha prob, beta prob):
-	exponential(alpha*beta/(alpha + beta))
-
-expSumRates(1/1,2/1)
+gamma(1/1, 2/3)

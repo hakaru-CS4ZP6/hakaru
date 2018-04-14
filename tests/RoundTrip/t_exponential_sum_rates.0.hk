@@ -8,8 +8,7 @@
 # 	then min(X, Y) ~ Exp(αβ/(β + α)).
 
 def exponential(alpha prob):
-	X <~ uniform(0,1)
-	return -1 * alpha * log(real2prob(X))
+	gamma(1/1, alpha)
 
 def expSumRates(alpha prob, beta prob):
 	X <~ exponential(alpha)
