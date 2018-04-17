@@ -7,4 +7,5 @@
 #	If X ~ Exp(α) and Y ~ Exp(β) 
 # 	then min(X, Y) ~ Exp(αβ/(β + α)).
 
+#exponential(1*2/(1+2))
 gamma(1/1, 2/3)

@@ -1,10 +1,10 @@
-# If X ~ Exp(λ) then e^−X ~ Beta(λ, 1).
+# If X ~ Exp(α) then e^−X ~ Beta(1/α, 1).
 
 def exponential(alpha prob):
 	gamma(1/1, alpha)
 
-def exp2beta(lambda prob):
-	X <~ exponential(1/lambda)
+def exp2beta(alpha prob):
+	X <~ exponential(alpha)
 	return exp(-X)
 
 exp2beta(2/1)

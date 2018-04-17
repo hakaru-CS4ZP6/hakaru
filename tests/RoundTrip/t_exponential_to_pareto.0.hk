@@ -1,4 +1,4 @@
-# If X ~ Exponential(λ) then k*exp(X) ~ Pareto(k, λ)
+# If X ~ Exponential(λ) then k*exp(X) ~ Pareto(λ, k)
 
 def exponential(alpha prob):
 	gamma(1/1, alpha)
