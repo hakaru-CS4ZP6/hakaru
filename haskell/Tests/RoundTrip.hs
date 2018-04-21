@@ -222,6 +222,7 @@ testExponentialRelations = test [
     "t_exponential_sum_to_erlang"        ~: testConcreteFiles "tests/RoundTrip/t_exponential_sum_to_erlang.0.hk" "tests/RoundTrip/t_exponential_sum_to_erlang.expected.hk",
     "t_exponential_to_beta"        ~: testConcreteFiles "tests/RoundTrip/t_exponential_to_beta.0.hk" "tests/RoundTrip/t_exponential_to_beta.expected.hk",
     "t_exponential_to_laplace"        ~: testConcreteFiles "tests/RoundTrip/t_exponential_to_laplace.0.hk" "tests/RoundTrip/t_exponential_to_laplace.expected.hk",
+    "t_exponential_to_pareto"        ~: testConcreteFiles "tests/RoundTrip/t_exponential_to_pareto.0.hk" "tests/RoundTrip/t_exponential_to_pareto.expected.hk",
     "t_exponential_to_stdChiSq"     ~: testConcreteFiles "tests/RoundTrip/t_exponential_to_stdChiSq.0.hk" "tests/RoundTrip/t_exponential_to_stdChiSq.expected.hk"
     ]
 
