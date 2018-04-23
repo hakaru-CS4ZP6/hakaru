@@ -241,6 +241,11 @@ testCauchyRelations = test [
     "t_cauchy_linear_transformation" ~: testConcreteFiles "tests/RoundTrip2/t_cauchy_linear_transformation.0.hk" "tests/RoundTrip2/t_cauchy_linear_transformation.expected.hk"
     ]
 
+testRayleighRelations :: Test 
+testRayleighRelations = test [
+    "t_exponential_to_rayleigh" ~: testConcreteFiles "tests/RoundTrip2/t_exponential_to_rayleigh.0.hk" "tests/RoundTrip2/t_exponential_to_rayleigh.expected.hk"
+    ]
+
 testOther :: Test
 testOther = test [
     "t82"              ~: testConcreteFiles "tests/RoundTrip/t82.0.hk" "tests/RoundTrip/t82.expected.hk",
@@ -286,6 +291,7 @@ allTests = test
     , testStdChiSqRelations
     , testExponentialRelations
     , testCauchyRelations
+    , testRayleighRelations
     , testOther
     ]
 
