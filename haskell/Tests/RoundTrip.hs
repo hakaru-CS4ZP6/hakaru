@@ -238,6 +238,7 @@ testErlangRelations = test [
     
 testCauchyRelations :: Test 
 testCauchyRelations = test [
+    "t_cauchy_reciprocal_transformation" ~: testConcreteFiles "tests/RoundTrip2/t_cauchy_reciprocal_transformation.0.hk" "tests/RoundTrip2/t_cauchy_reciprocal_transformation.expected.hk",
     "t_uniform_to_cauchy" ~: testConcreteFiles "tests/RoundTrip2/t_uniform_to_cauchy.0.hk" "tests/RoundTrip2/t_uniform_to_cauchy.expected.hk",
     "t_normal_to_cauchy" ~: testConcreteFiles "tests/RoundTrip2/t_normal_to_cauchy.0.hk" "tests/RoundTrip2/t_normal_to_cauchy.expected.hk",
     "t_cauchy_linear_transformation" ~: testConcreteFiles "tests/RoundTrip2/t_cauchy_linear_transformation.0.hk" "tests/RoundTrip2/t_cauchy_linear_transformation.expected.hk"
@@ -295,7 +296,6 @@ allTests = test
     , testStdChiSqRelations
     , testCauchyRelations
     , testExponentialRelations
-    , testCauchyRelations
     , testRayleighRelations
     , testOther
     ]
