@@ -28,15 +28,7 @@ simplifyTests t env =
 
 allTests :: Maybe String -> Test
 allTests env = test $
-  [ TestLabel "Parser"       P.allTests
-  , TestLabel "Pretty"       Pr.allTests
-  , TestLabel "TypeCheck"    TC.allTests
-  , TestLabel "Simplify"     (simplifyTests S.allTests env)
-  , TestLabel "Disintegrate" D.allTests
-  , TestLabel "Evaluate"     E.allTests
-  , TestLabel "RoundTrip"    (simplifyTests RT.allTests env)
-  , TestLabel "Relationships" (simplifyTests REL.allTests env)
-  , TestLabel "ASTTransforms" TR.allTests
+  [ TestLabel "RoundTrip"    (simplifyTests RT.allTests env)
   ]
 
 main :: IO ()
