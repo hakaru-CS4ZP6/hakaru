@@ -262,7 +262,7 @@ testCauchyRelations = test [
 testRayleighRelations :: Test 
 testRayleighRelations = test [
     "t_exponential_to_rayleigh" ~: testConcreteFiles "tests/RoundTrip2/t_exponential_to_rayleigh.0.hk" "tests/RoundTrip2/t_exponential_to_rayleigh.expected.hk",
-    "t_gamma_to_rayleigh" ~: testConcreteFiles "tests/RoundTrip2/t_gamma_to_rayleigh.0.hk" "tests/RoundTrip2/t_gamma_to_rayleigh.expected.hk",
+    "t_rayleigh_to_gamma" ~: testConcreteFiles "tests/RoundTrip2/t_rayleigh_to_gamma.0.hk" "tests/RoundTrip2/t_rayleigh_to_gamma.expected.hk",
     "t_weibull_to_rayleigh" ~: testConcreteFiles "tests/RoundTrip2/t_weibull_to_rayleigh.0.hk" "tests/RoundTrip2/t_weibull_to_rayleigh.expected.hk"
     ]
 
