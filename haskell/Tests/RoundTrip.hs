@@ -217,11 +217,11 @@ testStdChiSqRelations = test [
 
 testCauchyRelations :: Test 
 testCauchyRelations = test [
-    "t_cauchy_add_transformation" ~: testConcreteFiles "tests/RoundTrip2/t_cauchy_add_transformation.0.hk" "tests/RoundTrip2/t_cauchy_add_transformation.expected.hk",
-    "t_cauchy_sub_transformation" ~: testConcreteFiles "tests/RoundTrip2/t_cauchy_sub_transformation.0.hk" "tests/RoundTrip2/t_cauchy_sub_transformation.expected.hk",
     "t_cauchy_reciprocal_transformation" ~: testConcreteFiles "tests/RoundTrip/t_cauchy_reciprocal_transformation.0.hk" "tests/RoundTrip/t_cauchy_reciprocal_transformation.expected.hk",
     "t_cauchy_to_students_t" ~: testConcreteFiles "tests/RoundTrip/t_cauchy_to_students_t.0.hk" "tests/RoundTrip/t_cauchy_to_students_t.expected.hk",
     "t_uniform_to_cauchy" ~: testConcreteFiles "tests/RoundTrip2/t_uniform_to_cauchy.0.hk" "tests/RoundTrip2/t_uniform_to_cauchy.expected.hk",
+    "t_cauchy_add_transformation" ~: testConcreteFiles "tests/RoundTrip/t_cauchy_add_transformation.0.hk" "tests/RoundTrip/t_cauchy_add_transformation.expected.hk",
+    "t_cauchy_sub_transformation" ~: testConcreteFiles "tests/RoundTrip/t_cauchy_sub_transformation.0.hk" "tests/RoundTrip/t_cauchy_sub_transformation.expected.hk"
     ]
 
 testExponentialRelations :: Test 
@@ -312,7 +312,6 @@ allTests = test
     , testCauchyRelations
     , testExponentialRelations
     , testRayleighRelations
-    , testCauchyRelations
     , testOther
     ]
 
