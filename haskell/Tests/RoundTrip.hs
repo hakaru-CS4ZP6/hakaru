@@ -217,17 +217,26 @@ testStdChiSqRelations = test [
     "t_F_to_chiSq_general"     ~: testConcreteFiles "tests/RoundTrip/t_F_to_chiSq_general.0.hk" "tests/RoundTrip/t_F_to_chiSq_general.expected.hk"
     ]
 
+
+testCauchyRelations :: Test 
+testCauchyRelations = test [
+    "t_cauchy_add_transformation" ~: testConcreteFiles "tests/RoundTrip2/t_cauchy_add_transformation.0.hk" "tests/RoundTrip2/t_cauchy_add_transformation.expected.hk",
+    "t_cauchy_sub_transformation" ~: testConcreteFiles "tests/RoundTrip2/t_cauchy_sub_transformation.0.hk" "tests/RoundTrip2/t_cauchy_sub_transformation.expected.hk"
+    ]
+
 testExponentialRelations :: Test 
-testExponentialRelations = test [ 
-    "t_exponential_scale_closure"   ~: testConcreteFiles "tests/RoundTrip/t_exponential_scale_closure.0.hk" "tests/RoundTrip/t_exponential_scale_closure.expected.hk",
+testExponentialRelations = test [
+    "t_pareto_to_exponential"        ~: testConcreteFiles "tests/RoundTrip/t_pareto_to_exponential.0.hk" "tests/RoundTrip/t_pareto_to_exponential.expected.hk",
+    "t_exponential_to_pareto"        ~: testConcreteFiles "tests/RoundTrip/t_exponential_to_pareto.0.hk" "tests/RoundTrip/t_exponential_to_pareto.expected.hk",
+    "t_exponential_to_laplace"        ~: testConcreteFiles "tests/RoundTrip/t_exponential_to_laplace.0.hk" "tests/RoundTrip/t_exponential_to_laplace.expected.hk",
+    "t_exponential_to_beta"        ~: testConcreteFiles "tests/RoundTrip/t_exponential_to_beta.0.hk" "tests/RoundTrip/t_exponential_to_beta.expected.hk",
+
+    "t_exponential_sum_to_erlang"        ~: testConcreteFiles "tests/RoundTrip/t_exponential_sum_to_erlang.0.hk" "tests/RoundTrip/t_exponential_sum_to_erlang.expected.hk",
+
     "t_exp_erlang_to_pareto"        ~: testConcreteFiles "tests/RoundTrip/t_exp_erlang_to_pareto.0.hk" "tests/RoundTrip/t_exp_erlang_to_pareto.expected.hk",
     "t_exponential_sum_rates"        ~: testConcreteFiles "tests/RoundTrip/t_exponential_sum_rates.0.hk" "tests/RoundTrip/t_exponential_sum_rates.expected.hk",
-    "t_exponential_sum_to_erlang"        ~: testConcreteFiles "tests/RoundTrip/t_exponential_sum_to_erlang.0.hk" "tests/RoundTrip/t_exponential_sum_to_erlang.expected.hk",
-    "t_exponential_to_beta"        ~: testConcreteFiles "tests/RoundTrip/t_exponential_to_beta.0.hk" "tests/RoundTrip/t_exponential_to_beta.expected.hk",
-    "t_exponential_to_laplace"        ~: testConcreteFiles "tests/RoundTrip/t_exponential_to_laplace.0.hk" "tests/RoundTrip/t_exponential_to_laplace.expected.hk",
-    "t_exponential_to_pareto"        ~: testConcreteFiles "tests/RoundTrip/t_exponential_to_pareto.0.hk" "tests/RoundTrip/t_exponential_to_pareto.expected.hk",
-    "t_pareto_to_exponential"        ~: testConcreteFiles "tests/RoundTrip/t_pareto_to_exponential.0.hk" "tests/RoundTrip/t_pareto_to_exponential.expected.hk", 
-    "t_exponential_to_stdChiSq"     ~: testConcreteFiles "tests/RoundTrip/t_exponential_to_stdChiSq.0.hk" "tests/RoundTrip/t_exponential_to_stdChiSq.expected.hk"
+    "t_exponential_to_stdChiSq"     ~: testConcreteFiles "tests/RoundTrip/t_exponential_to_stdChiSq.0.hk" "tests/RoundTrip/t_exponential_to_stdChiSq.expected.hk",
+    "t_exponential_scale_closure"   ~: testConcreteFiles "tests/RoundTrip/t_exponential_scale_closure.0.hk" "tests/RoundTrip/t_exponential_scale_closure.expected.hk"
     ]
 
 testErlangRelations :: Test
@@ -292,11 +301,18 @@ testOther = test [
 
 allTests :: Test 
 allTests = test
-    [ testErlangRelations
+    [ testMeasureUnit
+    , testMeasureProb
+    , testMeasureReal
+    , testMeasurePair
+    , testMeasureNat
+    , testMeasureInt
+    , testErlangRelations
     , testStdChiSqRelations
     , testCauchyRelations
     , testExponentialRelations
     , testRayleighRelations
+    , testOther
     ]
 
 ----------------------------------------------------------------
